@@ -10,6 +10,14 @@ METHODS
     This is where all the real work is done, and its called via a little
     glue around "plugin_from_config"
 
+ATTRIBUTES
+  "distname"
+  "try_built"
+  "fallback"
+  "dir"
+PRIVATE ATTRIBUTES
+  "_cwd"
+  "_bootstrap_root"
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 

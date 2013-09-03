@@ -34,9 +34,11 @@ around 'dump_config' => sub {
   return $config;
 };
 
+
 has distname => ( is => ro =>, lazy => 1, builder => sub { $_[0]->zilla->name; }, );
 
-has cwd => (
+
+has _cwd => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
@@ -45,50 +47,32 @@ has cwd => (
     return Path::Tiny::path(Cwd::cwd());
   },
 );
+
+
 has try_built => (
   is      => ro =>,
   lazy    => 1,
-  builder => sub {
-    my ($self) = @_;
-    return unless $self->has_no_try_built;
-    return !$self->no_try_built;
-  },
+  builder => sub { return }
 );
-has no_try_built => (
-  is        => ro =>,
-  lazy      => 1,
-  predicate => 'has_no_try_built',
-  builder   => sub {
-    return;
-  },
-);
+
+
 has fallback => (
   is      => ro =>,
   lazy    => 1,
-  builder => sub {
-    my ($self) = @_;
-    return 1 unless $self->has_no_fallback;
-    return !$self->no_fallback;
-  },
+  builder => sub { return 1 }
 );
-has no_fallback => (
-  is        => ro =>,
-  lazy      => 1,
-  predicate => 'has_no_fallback',
-  builder   => sub {
-    return;
-  },
-);
-has bootstrap_root => (
+
+
+has _bootstrap_root => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     my ($self) = @_;
     if ( not $self->try_built ) {
-      return $self->cwd;
+      return $self->_cwd;
     }
     my $distname = $self->distname;
-    my (@candidates) = grep { $_->basename =~ /\A\Q$distname\E-/msx } grep { $_->is_dir } $self->cwd->children;
+    my (@candidates) = grep { $_->basename =~ /\A\Q$distname\E-/msx } grep { $_->is_dir } $self->_cwd->children;
 
     if ( scalar @candidates == 1 ) {
       return $candidates[0];
@@ -101,9 +85,11 @@ has bootstrap_root => (
     }
 
     $self->log( [ 'candidates for bootstrap (%s) != 1, fallback to boostrapping <distname>/', 0 + @candidates ] );
-    return $self->cwd;
+    return $self->_cwd;
   },
 );
+
+
 has dir => (
   is      => ro =>,
   lazy    => 1,
@@ -116,7 +102,7 @@ has dir => (
 sub do_bootstrap_sharedir {
   my ( $self, ) = @_;
 
-  my $root = $self->bootstrap_root;
+  my $root = $self->_bootstrap_root;
 
   if ( not defined $root ) {
     $self->log( ['Not bootstrapping'] );
@@ -182,6 +168,22 @@ version 0.1.0
 =head2 C<do_bootstrap_sharedir>
 
 This is where all the real work is done, and its called via a little glue around C<plugin_from_config>
+
+=head1 ATTRIBUTES
+
+=head2 C<distname>
+
+=head2 C<try_built>
+
+=head2 C<fallback>
+
+=head2 C<dir>
+
+=head1 PRIVATE ATTRIBUTES
+
+=head2 C<_cwd>
+
+=head2 C<_bootstrap_root>
 
 =begin MetaPOD::JSON v1.1.0
 
