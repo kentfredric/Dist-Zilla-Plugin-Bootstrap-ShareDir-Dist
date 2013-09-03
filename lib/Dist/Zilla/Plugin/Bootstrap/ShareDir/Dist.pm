@@ -90,7 +90,7 @@ sub do_bootstrap_sharedir {
         return;
     }
     my $sharedir = $root->child( $self->dir );
-    $self->log(['Bootstrapping %s for sharedir for %s', $sharedir, $self->distname ]);
+    $self->log(['Bootstrapping %s for sharedir for %s', "$sharedir", $self->distname ]);
 }
 
 
