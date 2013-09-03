@@ -32,7 +32,7 @@ around 'dump_config' => sub {
     return $config;
 };
 
-has distname => (  is => ro =>, lazy => 1, builder => sub {      $_[0]->zilla->distname;  });
+has distname => (  is => ro =>, lazy => 1, builder => sub {      $_[0]->zilla->name;  });
 has cwd      => (  is => ro =>, lazy => 1, builder => sub { 
     require Path::Tiny;
     require Cwd;
@@ -90,7 +90,7 @@ sub do_bootstrap_sharedir {
         return;
     }
     my $sharedir = $root->child( $self->dir );
-
+    $self->log(['Bootstrapping %s for sharedir for %s', $sharedir, $self->distname ]);
 }
 
 
