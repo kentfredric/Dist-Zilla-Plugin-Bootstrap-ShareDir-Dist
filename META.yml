@@ -93,7 +93,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
           dir: share
-          fallback: ~
+          fallback: 1
           try_built: 1
       name: Bootstrap::ShareDir::Dist
       version: ~

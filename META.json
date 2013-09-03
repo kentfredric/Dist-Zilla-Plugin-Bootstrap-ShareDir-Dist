@@ -149,7 +149,7 @@
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
                   "dir" : "share",
-                  "fallback" : null,
+                  "fallback" : 1,
                   "try_built" : "1"
                }
             },
