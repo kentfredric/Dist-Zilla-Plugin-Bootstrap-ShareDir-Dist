@@ -44,22 +44,22 @@ has _cwd => (
   builder => sub {
     require Path::Tiny;
     require Cwd;
-    return Path::Tiny::path(Cwd::cwd());
+    return Path::Tiny::path( Cwd::cwd() );
   },
 );
 
 
 has try_built => (
-  is      => ro =>,
+  is      => ro  =>,
   lazy    => 1,
-  builder => sub { return }
+  builder => sub { return },
 );
 
 
 has fallback => (
-  is      => ro =>,
+  is      => ro  =>,
   lazy    => 1,
-  builder => sub { return 1 }
+  builder => sub { return 1 },
 );
 
 
