@@ -91,6 +91,17 @@ sub do_bootstrap_sharedir {
     }
     my $sharedir = $root->child( $self->dir );
     $self->log(['Bootstrapping %s for sharedir for %s', "$sharedir", $self->distname ]);
+    require Test::File::ShareDir::TempDirObject;
+    my $object = Test::File::ShareDir::TempDirObject->new({
+        -share => {
+            -dist => {
+                $self->distname => $sharedir
+            }
+        }
+   });
+   $object->_install_dist($self->distname);
+   require lib;
+   lib->import( $object->_tempdir . '' );
 }
 
 
