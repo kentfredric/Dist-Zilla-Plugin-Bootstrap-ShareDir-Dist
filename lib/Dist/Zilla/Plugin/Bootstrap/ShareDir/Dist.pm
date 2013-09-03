@@ -32,7 +32,7 @@ around 'dump_config' => sub {
   return $config;
 };
 
-has distname => ( is => ro =>, lazy => 1, builder => sub { $_[0]->zilla->name; } );
+has distname => ( is => ro =>, lazy => 1, builder => sub { $_[0]->zilla->name; }, );
 has cwd => (
   is      => ro =>,
   lazy    => 1,
@@ -40,7 +40,7 @@ has cwd => (
     require Path::Tiny;
     require Cwd;
     return Path::Tiny::path(Cwd::cwd);
-  }
+  },
 );
 has try_built => (
   is      => ro =>,
@@ -49,7 +49,7 @@ has try_built => (
     my ($self) = @_;
     return unless $self->has_no_try_built;
     return !$self->no_try_built;
-  }
+  },
 );
 has no_try_built => (
   is        => ro =>,
@@ -57,7 +57,7 @@ has no_try_built => (
   predicate => 'has_no_try_built',
   builder   => sub {
     return;
-  }
+  },
 );
 has fallback => (
   is      => ro =>,
@@ -66,7 +66,7 @@ has fallback => (
     my ($self) = @_;
     return 1 unless $self->has_no_fallback;
     return !$self->no_fallback;
-  }
+  },
 );
 has no_fallback => (
   is        => ro =>,
@@ -74,7 +74,7 @@ has no_fallback => (
   predicate => 'has_no_fallback',
   builder   => sub {
     return;
-  }
+  },
 );
 has bootstrap_root => (
   is      => ro =>,
@@ -99,17 +99,15 @@ has bootstrap_root => (
 
     $self->log( [ 'candidates for bootstrap (%s) != 1, fallback to boostrapping <distname>/', 0 + @candidates ] );
     return $self->cwd;
-  }
+  },
 );
 has dir => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     return 'share';
-  }
+  },
 );
-
-has halt_after_setup => ( is => ro =>, lazy => 1, builder => sub { return ; } );
 
 sub do_bootstrap_sharedir {
   my ( $self, ) = @_;
@@ -133,16 +131,19 @@ sub do_bootstrap_sharedir {
     }
   );
   for my $dist ( $object->_dist_names ) {
-    $self->log_debug(['Installing dist %s ( %s => %s )', "$dist", $object->_dist_share_source_dir($dist) . "" , $object->_dist_share_target_dir($dist) . "" ]);
+    $self->log_debug(
+      [
+        'Installing dist %s ( %s => %s )',
+        "$dist",
+        $object->_dist_share_source_dir($dist) . q{},
+        $object->_dist_share_target_dir($dist) . q{},
+      ]
+    );
     $object->_install_dist($dist);
   }
   require lib;
-  lib->import( $object->_tempdir . '' );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->_tempdir . '' ] );
-  if ( $self->halt_after_setup ) {
-      $self->log("Tempdir is " . $object->_tempdir ); 
-      system('bash');
-  }
+  lib->import( $object->_tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->_tempdir . q{} ] );
 }
 
 around plugin_from_config => sub {
