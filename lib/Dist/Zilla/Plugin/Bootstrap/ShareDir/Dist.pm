@@ -21,6 +21,23 @@ use MooseX::AttributeShortcuts;
 
 =cut
 
+=head1 SYNOPSIS
+
+This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+
+    [ShareDir]
+    dir = share
+
+The only difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+=cut
+
 with 'Dist::Zilla::Role::Plugin';
 
 around 'dump_config' => sub {
