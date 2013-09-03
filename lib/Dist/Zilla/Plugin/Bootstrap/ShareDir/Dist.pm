@@ -11,8 +11,8 @@ BEGIN {
 
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
-use Moose;
-use MooseX::AttributeShortcuts;
+use Moo 1.000008;
+#use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Plugin';
 
