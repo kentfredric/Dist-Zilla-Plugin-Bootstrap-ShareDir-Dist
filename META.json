@@ -118,7 +118,8 @@
             "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::lib" : {
-                  "try_built" : null
+                  "fallback" : 1,
+                  "try_built" : "1"
                }
             },
             "name" : "Bootstrap::lib",
@@ -130,11 +131,11 @@
                "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
                   "dir" : "share",
                   "fallback" : null,
-                  "try_built" : null
+                  "try_built" : "1"
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : null
+            "version" : "0.1.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
