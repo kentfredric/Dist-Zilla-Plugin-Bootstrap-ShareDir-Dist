@@ -6,6 +6,12 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a `share` directory on your
 
 version 0.1.0
 
+# METHODS
+
+## `do_bootstrap_sharedir`
+
+This is where all the real work is done, and its called via a little glue around `plugin_from_config`
+
 # AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
