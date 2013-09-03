@@ -11,7 +11,8 @@ BEGIN {
 
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
-use Moo 1.000008;
+use Moose;
+use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Plugin';
 
@@ -33,6 +34,7 @@ around 'dump_config' => sub {
 };
 
 has distname => ( is => ro =>, lazy => 1, builder => sub { $_[0]->zilla->name; }, );
+
 has cwd => (
   is      => ro =>,
   lazy    => 1,
@@ -85,7 +87,7 @@ has bootstrap_root => (
       return $self->cwd;
     }
     my $distname = $self->distname;
-    my (@candidates) = grep { $_->basename =~ /^\Q$distname\E-/ } grep { $_->is_dir } $self->cwd->children;
+    my (@candidates) = grep { $_->basename =~ /\A\Q$distname\E-/msx } grep { $_->is_dir } $self->cwd->children;
 
     if ( scalar @candidates == 1 ) {
       return $candidates[0];
@@ -108,6 +110,7 @@ has dir => (
     return 'share';
   },
 );
+
 
 sub do_bootstrap_sharedir {
   my ( $self, ) = @_;
@@ -144,6 +147,7 @@ sub do_bootstrap_sharedir {
   require lib;
   lib->import( $object->_tempdir . q{} );
   $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->_tempdir . q{} ] );
+  return;
 }
 
 around plugin_from_config => sub {
@@ -171,6 +175,12 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 =head1 VERSION
 
 version 0.1.0
+
+=head1 METHODS
+
+=head2 C<do_bootstrap_sharedir>
+
+This is where all the real work is done, and its called via a little glue around C<plugin_from_config>
 
 =head1 AUTHOR
 
