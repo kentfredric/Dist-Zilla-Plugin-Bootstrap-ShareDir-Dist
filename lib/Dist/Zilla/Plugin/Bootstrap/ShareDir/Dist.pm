@@ -8,6 +8,19 @@ package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 use Moose;
 use MooseX::AttributeShortcuts;
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
+    "interface":"class",
+    "does":"Dist::Zilla::Role::Plugin",
+    "inherits":"Moose::Object"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 with 'Dist::Zilla::Role::Plugin';
 
 around 'dump_config' => sub {
@@ -27,61 +40,60 @@ around 'dump_config' => sub {
   return $config;
 };
 
+=attr C<distname>
+
+=cut
+
 has distname => ( is => ro =>, lazy => 1, builder => sub { $_[0]->zilla->name; }, );
 
-has cwd => (
+=p_attr C<_cwd>
+
+=cut
+
+has _cwd => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     require Path::Tiny;
     require Cwd;
-    return Path::Tiny::path(Cwd::cwd);
+    return Path::Tiny::path( Cwd::cwd() );
   },
 );
+
+=attr C<try_built>
+
+=cut
+
 has try_built => (
-  is      => ro =>,
+  is      => ro  =>,
   lazy    => 1,
-  builder => sub {
-    my ($self) = @_;
-    return unless $self->has_no_try_built;
-    return !$self->no_try_built;
-  },
+  builder => sub { return },
 );
-has no_try_built => (
-  is        => ro =>,
-  lazy      => 1,
-  predicate => 'has_no_try_built',
-  builder   => sub {
-    return;
-  },
-);
+
+=attr C<fallback>
+
+=cut
+
 has fallback => (
-  is      => ro =>,
+  is      => ro  =>,
   lazy    => 1,
-  builder => sub {
-    my ($self) = @_;
-    return 1 unless $self->has_no_fallback;
-    return !$self->no_fallback;
-  },
+  builder => sub { return 1 },
 );
-has no_fallback => (
-  is        => ro =>,
-  lazy      => 1,
-  predicate => 'has_no_fallback',
-  builder   => sub {
-    return;
-  },
-);
-has bootstrap_root => (
+
+=p_attr C<_bootstrap_root>
+
+=cut
+
+has _bootstrap_root => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     my ($self) = @_;
     if ( not $self->try_built ) {
-      return $self->cwd;
+      return $self->_cwd;
     }
     my $distname = $self->distname;
-    my (@candidates) = grep { $_->basename =~ /\A\Q$distname\E-/msx } grep { $_->is_dir } $self->cwd->children;
+    my (@candidates) = grep { $_->basename =~ /\A\Q$distname\E-/msx } grep { $_->is_dir } $self->_cwd->children;
 
     if ( scalar @candidates == 1 ) {
       return $candidates[0];
@@ -94,9 +106,14 @@ has bootstrap_root => (
     }
 
     $self->log( [ 'candidates for bootstrap (%s) != 1, fallback to boostrapping <distname>/', 0 + @candidates ] );
-    return $self->cwd;
+    return $self->_cwd;
   },
 );
+
+=attr C<dir>
+
+=cut
+
 has dir => (
   is      => ro =>,
   lazy    => 1,
@@ -114,7 +131,7 @@ This is where all the real work is done, and its called via a little glue around
 sub do_bootstrap_sharedir {
   my ( $self, ) = @_;
 
-  my $root = $self->bootstrap_root;
+  my $root = $self->_bootstrap_root;
 
   if ( not defined $root ) {
     $self->log( ['Not bootstrapping'] );

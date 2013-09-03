@@ -12,6 +12,31 @@ version 0.1.0
 
 This is where all the real work is done, and its called via a little glue around `plugin_from_config`
 
+# ATTRIBUTES
+
+## `distname`
+
+## `try_built`
+
+## `fallback`
+
+## `dir`
+
+# PRIVATE ATTRIBUTES
+
+## `_cwd`
+
+## `_bootstrap_root`
+
+{
+    "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
+    "interface":"class",
+    "does":"Dist::Zilla::Role::Plugin",
+    "inherits":"Moose::Object"
+}
+
+
+
 # AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
