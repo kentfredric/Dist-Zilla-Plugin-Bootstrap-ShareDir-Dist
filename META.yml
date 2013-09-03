@@ -3,9 +3,11 @@ abstract: 'Use a C<share> directory on your dist during bootstrap'
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
+  File::Copy::Recursive: 0
   IO::Handle: 0
   IPC::Open3: 0
   Module::Build: 0.4007
+  Path::FindDev: 0
   Test::More: 0.98
 configure_requires:
   Module::Build: 0.4007
@@ -30,6 +32,10 @@ requires:
   perl: v5.10.0
   strict: 0
   warnings: 0
+resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
+  homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
+  repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
 version: 0.1.0
 x_BuiltWith:
   modules:
@@ -37,10 +43,12 @@ x_BuiltWith:
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.3
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Dist::Zilla::Role::Plugin: 4.300037
+    File::Copy::Recursive: 0.38
     IO::Handle: 1.34
     IPC::Open3: 1.13
     Module::Build: 0.4007
     Moo: 1.003
+    Path::FindDev: 0.2.0
     Path::Tiny: 0.031
     Pod::Coverage::TrustPod: 0.100002
     Test::CPAN::Changes: 0.23
