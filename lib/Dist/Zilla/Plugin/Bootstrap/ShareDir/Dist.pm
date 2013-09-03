@@ -14,6 +14,7 @@ BEGIN {
 use Moose;
 use MooseX::AttributeShortcuts;
 
+
 with 'Dist::Zilla::Role::Plugin';
 
 around 'dump_config' => sub {
@@ -41,7 +42,7 @@ has cwd => (
   builder => sub {
     require Path::Tiny;
     require Cwd;
-    return Path::Tiny::path(Cwd::cwd);
+    return Path::Tiny::path(Cwd::cwd());
   },
 );
 has try_built => (
@@ -181,6 +182,18 @@ version 0.1.0
 =head2 C<do_bootstrap_sharedir>
 
 This is where all the real work is done, and its called via a little glue around C<plugin_from_config>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
+    "interface":"class",
+    "does":"Dist::Zilla::Role::Plugin",
+    "inherits":"Moose::Object"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 AUTHOR
 
