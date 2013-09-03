@@ -102,6 +102,7 @@ sub do_bootstrap_sharedir {
    $object->_install_dist($self->distname);
    require lib;
    lib->import( $object->_tempdir . '' );
+   $self->log_debug(['Sharedir for %s installed to %s', $self->distname, $object->_tempdir . '' ]);
 }
 
 
