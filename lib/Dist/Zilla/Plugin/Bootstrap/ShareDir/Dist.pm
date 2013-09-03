@@ -133,7 +133,7 @@ sub do_bootstrap_sharedir {
     }
   );
   for my $dist ( $object->_dist_names ) {
-    $self->log_debug(['Installing dist %s ( %s => %s )', "$dist", $object->_dist_share_source_dir($dist) . "" , $self->_dist_share_target_dir($dist) . "" ]):
+    $self->log_debug(['Installing dist %s ( %s => %s )', "$dist", $object->_dist_share_source_dir($dist) . "" , $self->_dist_share_target_dir($dist) . "" ]);
     $object->_install_dist($dist);
   }
   require lib;

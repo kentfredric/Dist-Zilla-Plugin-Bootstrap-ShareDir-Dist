@@ -96,7 +96,7 @@ x_Dist_Zilla:
           fallback: ~
           try_built: 1
       name: Bootstrap::ShareDir::Dist
-      version: 0.1.0
+      version: ~
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'
