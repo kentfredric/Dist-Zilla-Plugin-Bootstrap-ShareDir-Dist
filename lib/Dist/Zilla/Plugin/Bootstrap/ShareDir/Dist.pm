@@ -134,5 +134,9 @@ sub bootstrap {
     return $self->do_bootstrap_sharedir;
 }
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+no MooseX::AttributeShortcuts;
+
 1;
 
