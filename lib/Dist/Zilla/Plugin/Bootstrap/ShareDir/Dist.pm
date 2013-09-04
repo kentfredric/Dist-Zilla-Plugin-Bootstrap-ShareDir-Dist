@@ -128,7 +128,7 @@ otherwise it falls back to simply bootstrapping C<ROOT/share>
 
     [Bootstrap::ShareDir::Dist]
     dir = share
-    try_built = 1 
+    try_built = 1
 
 =head1 METHODS
 
