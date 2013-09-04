@@ -18,14 +18,27 @@ This module is the logical intersection of `ShareDir` and `Bootstrap::lib` plug-
     [ShareDir]
     dir = share
 
-The only difference between this module and `ShareDir` is this module exists to make `share` visible to
+The only significant difference between this module and `ShareDir` is this module exists to make `share` visible to
 plugins for the distribution being built, while `ShareDir` exists to export the `share` directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by [`Dist::Zilla::Role::Bootstrap`](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap), See ["ATTRIBUTES" in Dist::Zilla::Role::Bootstrap](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap#ATTRIBUTES)
+
+For instance, this bootstraps `ROOT/Your-Dist-Name-$VERSION/share` if it exists and there's only one `$VERSION`,
+otherwise it falls back to simply bootstrapping `ROOT/share`
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+    try_built = 1
 
 # METHODS
 
 ## `do_bootstrap_sharedir`
 
-This is where all the real work is done, and its called via a little glue around `plugin_from_config`
+This is where all the real work is done.
+
+## `bootstrap`
+
+Called by [`Dist::Zilla::Role::__Bootstrap__`](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap)
 
 # ATTRIBUTES
 
@@ -34,7 +47,7 @@ This is where all the real work is done, and its called via a little glue around
 {
     "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
     "interface":"class",
-    "does":"Dist::Zilla::Role::Plugin",
+    "does":"Dist::Zilla::Role::Bootstrap",
     "inherits":"Moose::Object"
 }
 

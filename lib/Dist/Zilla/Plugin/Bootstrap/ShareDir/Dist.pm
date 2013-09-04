@@ -34,8 +34,17 @@ This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plu
     [ShareDir]
     dir = share
 
-The only difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
 plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
+otherwise it falls back to simply bootstrapping C<ROOT/share>
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+    try_built = 1
 
 =cut
 
@@ -72,7 +81,7 @@ has dir => (
 
 =method C<do_bootstrap_sharedir>
 
-This is where all the real work is done, and its called via a little glue around C<plugin_from_config>
+This is where all the real work is done.
 
 =cut
 
@@ -116,13 +125,13 @@ sub do_bootstrap_sharedir {
 
 =method C<bootstrap>
 
-Called by L<<< C<<Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstrap >>>
+Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstrap >>>
 
 =cut
 
 sub bootstrap {
     my $self = shift;
-    $self->do_bootstrap_sharedir;
+    return $self->do_bootstrap_sharedir;
 }
 
 1;
