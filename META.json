@@ -161,7 +161,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.1.1"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",

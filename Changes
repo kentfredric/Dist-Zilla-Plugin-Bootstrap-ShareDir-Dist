@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.2.0 2013-09-04T12:56:08Z
+0.2.0 2013-09-04T12:56:24Z
  [!Major]
  - Reimplemented in terms of ::Role::Bootstrap
 
