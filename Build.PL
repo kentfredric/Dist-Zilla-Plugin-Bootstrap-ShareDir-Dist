@@ -17,17 +17,15 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
-  "dist_version" => "0.1.0",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Cwd" => 0,
-    "Dist::Zilla::Role::Plugin" => 0,
+    "Dist::Zilla::Role::Bootstrap" => 0,
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,
-    "Path::Tiny" => 0,
     "Test::File::ShareDir::TempDirObject" => 0,
     "lib" => 0,
     "perl" => "v5.10.0",
@@ -36,11 +34,13 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Cwd" => 0,
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Path::FindDev" => 0,
+    "Path::Tiny" => 0,
     "Test::More" => "0.98"
   }
 );

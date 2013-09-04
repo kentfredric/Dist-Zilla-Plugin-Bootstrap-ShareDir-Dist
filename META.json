@@ -44,11 +44,9 @@
       },
       "runtime" : {
          "requires" : {
-            "Cwd" : "0",
-            "Dist::Zilla::Role::Plugin" : "0",
+            "Dist::Zilla::Role::Bootstrap" : "0",
             "Moose" : "0",
             "MooseX::AttributeShortcuts" : "0",
-            "Path::Tiny" : "0",
             "Test::File::ShareDir::TempDirObject" : "0",
             "lib" : "0",
             "perl" : "v5.10.0",
@@ -58,11 +56,13 @@
       },
       "test" : {
          "requires" : {
+            "Cwd" : "0",
             "File::Copy::Recursive" : "0",
             "File::ShareDir" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "Path::FindDev" : "0",
+            "Path::Tiny" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -70,7 +70,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
          "file" : "lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.2.0"
       }
    },
    "release_status" : "stable",
@@ -85,13 +85,13 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist"
       }
    },
-   "version" : "0.1.0",
+   "version" : "0.2.0",
    "x_BuiltWith" : {
       "modules" : {
          "Cwd" : "3.40",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.8.3",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
-         "Dist::Zilla::Role::Plugin" : "4.300037",
+         "Dist::Zilla::Role::Bootstrap" : "0.1.0",
          "File::Copy::Recursive" : "0.38",
          "File::ShareDir" : "1.03",
          "IO::Handle" : "1.34",
@@ -105,14 +105,14 @@
          "Test::CPAN::Changes" : "0.23",
          "Test::CPAN::Meta" : "0.23",
          "Test::File::ShareDir::TempDirObject" : "0.3.3",
-         "Test::Kwalitee" : "1.13",
+         "Test::Kwalitee" : "1.14",
          "Test::More" : "0.98",
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.08",
          "lib" : "0.63",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",
-         "version" : "0.9903",
+         "version" : "0.9904",
          "warnings" : "1.18"
       },
       "perl" : {
@@ -152,13 +152,16 @@
             "class" : "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
-                  "dir" : "share",
-                  "fallback" : 1,
+                  "dir" : "share"
+               },
+               "Dist::Zilla::Role::Bootstrap" : {
+                  "distname" : "Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
+                  "fallback" : "1",
                   "try_built" : "1"
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.1.0"
+            "version" : "0.2.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
@@ -173,7 +176,7 @@
          {
             "class" : "Dist::Zilla::Plugin::GithubMeta",
             "name" : "@Author::KENTNL/GithubMeta",
-            "version" : "0.32"
+            "version" : "0.34"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
@@ -275,7 +278,7 @@
                }
             },
             "name" : "@Author::KENTNL/Test::Compile",
-            "version" : "2.023"
+            "version" : "2.025"
          },
          {
             "class" : "Dist::Zilla::Plugin::Test::Perl::Critic",
@@ -466,7 +469,7 @@
                }
             },
             "name" : "@Author::KENTNL/Prereqs::MatchInstalled",
-            "version" : "0.1.1"
+            "version" : "0.1.2"
          },
          {
             "class" : "Dist::Zilla::Plugin::FileFinder::ByName",
