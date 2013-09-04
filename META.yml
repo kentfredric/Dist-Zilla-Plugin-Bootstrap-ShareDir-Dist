@@ -24,7 +24,7 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm
-    version: v0.2.1
+    version: v0.2.2
 requires:
   Dist::Zilla::Role::Bootstrap: 0
   Moose: 0
@@ -38,7 +38,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
-version: 0.2.1
+version: 0.2.2
 x_BuiltWith:
   modules:
     Cwd: 3.40
@@ -102,7 +102,7 @@ x_Dist_Zilla:
           fallback: 1
           try_built: 1
       name: Bootstrap::ShareDir::Dist
-      version: 0.2.1
+      version: ~
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'

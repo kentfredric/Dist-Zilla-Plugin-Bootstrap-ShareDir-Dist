@@ -70,7 +70,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
          "file" : "lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm",
-         "version" : "v0.2.1"
+         "version" : "v0.2.2"
       }
    },
    "release_status" : "stable",
@@ -85,7 +85,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist"
       }
    },
-   "version" : "0.2.1",
+   "version" : "0.2.2",
    "x_BuiltWith" : {
       "modules" : {
          "Cwd" : "3.40",
@@ -161,7 +161,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.2.1"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
