@@ -87,7 +87,7 @@ sub do_bootstrap_sharedir {
 
 sub bootstrap {
     my $self = shift;
-    $self->do_bootstrap_sharedir;
+    return $self->do_bootstrap_sharedir;
 }
 
 1;
