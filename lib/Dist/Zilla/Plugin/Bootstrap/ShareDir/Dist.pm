@@ -129,7 +129,7 @@ This is where all the real work is done, and its called via a little glue around
 
 =head2 C<bootstrap>
 
-Called by L<<< C<<Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstrap >>>
+Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstrap >>>
 
 =head1 ATTRIBUTES
 

@@ -28,7 +28,7 @@ METHODS
     glue around "plugin_from_config"
 
   "bootstrap"
-    Called by "<Dist::Zilla::Role::Bootstrap ">
+    Called by "Dist::Zilla::Role::Bootstrap"
 
 ATTRIBUTES
   "dir"
