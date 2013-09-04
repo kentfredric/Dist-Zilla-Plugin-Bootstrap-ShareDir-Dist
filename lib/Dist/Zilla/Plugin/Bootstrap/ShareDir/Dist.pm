@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.2.0';
+  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
@@ -90,6 +90,10 @@ sub bootstrap {
     return $self->do_bootstrap_sharedir;
 }
 
+__PACKAGE__->meta->make_immutable;
+no Moose;
+no MooseX::AttributeShortcuts;
+
 1;
 
 __END__
@@ -104,7 +108,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
