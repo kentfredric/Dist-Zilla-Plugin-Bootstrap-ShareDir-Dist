@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a `share` directory on your
 
 # VERSION
 
-version 0.1.0
+version 0.1.1
 
 # SYNOPSIS
 
@@ -29,19 +29,7 @@ This is where all the real work is done, and its called via a little glue around
 
 # ATTRIBUTES
 
-## `distname`
-
-## `try_built`
-
-## `fallback`
-
 ## `dir`
-
-# PRIVATE ATTRIBUTES
-
-## `_cwd`
-
-## `_bootstrap_root`
 
 {
     "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
