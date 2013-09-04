@@ -23,13 +23,20 @@ SYNOPSIS
     directory visible after install time.
 
     Additionally, there are two primary attributes that are provided by
-    Dist::Zilla::Role::Bootstrap, "ATTRIBUTES" in
+    "Dist::Zilla::Role::Bootstrap", See "ATTRIBUTES" in
     Dist::Zilla::Role::Bootstrap
+
+    For instance, this bootstraps "ROOT/Your-Dist-Name-$VERSION/share" if it
+    exists and there's only one $VERSION, otherwise it falls back to simply
+    bootstrapping "ROOT/share"
+
+        [Bootstrap::ShareDir::Dist]
+        dir = share
+        try_built = 1
 
 METHODS
   "do_bootstrap_sharedir"
-    This is where all the real work is done, and its called via a little
-    glue around "plugin_from_config"
+    This is where all the real work is done.
 
   "bootstrap"
     Called by "Dist::Zilla::Role::Bootstrap"
