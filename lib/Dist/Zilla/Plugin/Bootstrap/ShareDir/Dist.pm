@@ -84,6 +84,7 @@ sub do_bootstrap_sharedir {
   return;
 }
 
+
 sub bootstrap {
     my $self = shift;
     $self->do_bootstrap_sharedir;
@@ -126,6 +127,10 @@ plugins for the distribution being built, while C<ShareDir> exists to export the
 
 This is where all the real work is done, and its called via a little glue around C<plugin_from_config>
 
+=head2 C<bootstrap>
+
+Called by L<<< C<<Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstrap >>>
+
 =head1 ATTRIBUTES
 
 =head2 C<dir>
@@ -135,7 +140,7 @@ This is where all the real work is done, and its called via a little glue around
 {
     "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
     "interface":"class",
-    "does":"Dist::Zilla::Role::Plugin",
+    "does":"Dist::Zilla::Role::Bootstrap",
     "inherits":"Moose::Object"
 }
 

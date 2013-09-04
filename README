@@ -27,6 +27,9 @@ METHODS
     This is where all the real work is done, and its called via a little
     glue around "plugin_from_config"
 
+  "bootstrap"
+    Called by "<Dist::Zilla::Role::Bootstrap ">
+
 ATTRIBUTES
   "dir"
 AUTHOR
