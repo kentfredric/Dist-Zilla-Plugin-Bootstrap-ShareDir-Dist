@@ -1,6 +1,20 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.1.1 2013-09-04T12:54:50Z
+0.2.0 2013-09-04T12:56:08Z
+ [!Major]
+ - Reimplemented in terms of ::Role::Bootstrap
+
+ [Dependencies::Added / runtime requires]
+ - Dist::Zilla::Role::Bootstrap
+
+ [Dependencies::Added / test requires]
+ - Cwd
+ - Path::Tiny
+
+ [Dependencies::Removed / runtime requires]
+ - Cwd
+ - Dist::Zilla::Role::Plugin
+ - Path::Tiny
 
 0.1.0 2013-09-03T06:40:40Z
  - First version.
