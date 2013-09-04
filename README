@@ -17,10 +17,14 @@ SYNOPSIS
         [ShareDir]
         dir = share
 
-    The only difference between this module and "ShareDir" is this module
-    exists to make "share" visible to plugins for the distribution being
-    built, while "ShareDir" exists to export the "share" directory visible
-    after install time.
+    The only significant difference between this module and "ShareDir" is
+    this module exists to make "share" visible to plugins for the
+    distribution being built, while "ShareDir" exists to export the "share"
+    directory visible after install time.
+
+    Additionally, there are two primary attributes that are provided by
+    Dist::Zilla::Role::Bootstrap, "ATTRIBUTES" in
+    Dist::Zilla::Role::Bootstrap
 
 METHODS
   "do_bootstrap_sharedir"

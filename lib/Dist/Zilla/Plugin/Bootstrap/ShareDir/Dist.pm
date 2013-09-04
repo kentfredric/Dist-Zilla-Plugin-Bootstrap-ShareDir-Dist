@@ -118,8 +118,10 @@ This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plu
     [ShareDir]
     dir = share
 
-The only difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
 plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by L<< Dist::Zilla::Role::Bootstrap >>, L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
 
 =head1 METHODS
 
