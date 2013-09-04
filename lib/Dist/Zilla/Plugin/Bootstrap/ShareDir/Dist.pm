@@ -16,7 +16,6 @@ use MooseX::AttributeShortcuts;
 
 
 
-
 with 'Dist::Zilla::Role::Bootstrap';
 
 around 'dump_config' => sub {
@@ -86,8 +85,8 @@ sub do_bootstrap_sharedir {
 
 
 sub bootstrap {
-    my $self = shift;
-    return $self->do_bootstrap_sharedir;
+  my $self = shift;
+  return $self->do_bootstrap_sharedir;
 }
 
 __PACKAGE__->meta->make_immutable;

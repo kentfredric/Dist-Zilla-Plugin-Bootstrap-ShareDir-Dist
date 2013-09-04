@@ -1,8 +1,9 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.2.1 2013-09-04T13:15:12Z
+0.2.1 2013-09-04T13:17:47Z
  [!Minor]
  - Make immutable.
+ - Tidy
 
 0.2.0 2013-09-04T12:57:46Z
  [!Major]
