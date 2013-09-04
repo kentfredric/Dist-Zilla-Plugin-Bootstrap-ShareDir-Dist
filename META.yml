@@ -97,10 +97,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
           dir: share
+        Dist::Zilla::Role::Bootstrap:
+          distname: Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
           fallback: 1
           try_built: 1
       name: Bootstrap::ShareDir::Dist
-      version: 0.1.0
+      version: ~
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'

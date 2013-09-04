@@ -152,13 +152,16 @@
             "class" : "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
-                  "dir" : "share",
+                  "dir" : "share"
+               },
+               "Dist::Zilla::Role::Bootstrap" : {
+                  "distname" : "Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
                   "fallback" : 1,
                   "try_built" : "1"
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.1.0"
+            "version" : null
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
