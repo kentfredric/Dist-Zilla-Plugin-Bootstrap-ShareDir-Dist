@@ -3,12 +3,14 @@ abstract: 'Use a C<share> directory on your dist during bootstrap'
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
+  Cwd: 0
   File::Copy::Recursive: 0
   File::ShareDir: 0
   IO::Handle: 0
   IPC::Open3: 0
   Module::Build: 0.4007
   Path::FindDev: 0
+  Path::Tiny: 0
   Test::More: 0.98
 configure_requires:
   Module::Build: 0.4007
@@ -22,13 +24,11 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm
-    version: v0.1.0
+    version: v0.1.1
 requires:
-  Cwd: 0
-  Dist::Zilla::Role::Plugin: 0
+  Dist::Zilla::Role::Bootstrap: 0
   Moose: 0
   MooseX::AttributeShortcuts: 0
-  Path::Tiny: 0
   Test::File::ShareDir::TempDirObject: 0
   lib: 0
   perl: v5.10.0
@@ -38,13 +38,13 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
-version: 0.1.0
+version: 0.1.1
 x_BuiltWith:
   modules:
     Cwd: 3.40
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.3
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
-    Dist::Zilla::Role::Plugin: 4.300037
+    Dist::Zilla::Role::Bootstrap: 0.1.0
     File::Copy::Recursive: 0.38
     File::ShareDir: 1.03
     IO::Handle: 1.34
