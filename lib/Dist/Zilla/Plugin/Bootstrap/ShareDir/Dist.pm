@@ -8,7 +8,6 @@ package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 use Moose;
 use MooseX::AttributeShortcuts;
 
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -130,8 +129,8 @@ Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstr
 =cut
 
 sub bootstrap {
-    my $self = shift;
-    return $self->do_bootstrap_sharedir;
+  my $self = shift;
+  return $self->do_bootstrap_sharedir;
 }
 
 __PACKAGE__->meta->make_immutable;

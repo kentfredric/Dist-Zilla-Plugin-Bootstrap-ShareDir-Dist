@@ -12,7 +12,7 @@ use Path::Tiny qw( path );
 
 with 'Dist::Zilla::Role::Plugin';
 
-our $content = path( dist_file('E','example.txt') )->slurp;
+our $content = path( dist_file( 'E', 'example.txt' ) )->slurp;
 
 1;
 
