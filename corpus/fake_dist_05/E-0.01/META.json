@@ -25,8 +25,7 @@
             "class" : "Dist::Zilla::Plugin::Bootstrap::lib",
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::lib" : {
-                  "fallback" : null,
-                  "no_fallback" : "1",
+                  "fallback" : "0",
                   "try_built" : "1"
                }
             },
@@ -37,14 +36,16 @@
             "class" : "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
             "config" : {
                "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
-                  "dir" : "share",
-                  "fallback" : "",
-                  "no_fallback" : "1",
+                  "dir" : "share"
+               },
+               "Dist::Zilla::Role::Bootstrap" : {
+                  "distname" : "E",
+                  "fallback" : "0",
                   "try_built" : "1"
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.1.0"
+            "version" : "0.2.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",

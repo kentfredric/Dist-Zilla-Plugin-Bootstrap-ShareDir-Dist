@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
-  "dist_version" => "0.2.1",
+  "dist_version" => "0.2.2",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
   "recommends" => {},
@@ -35,6 +35,7 @@ my %module_build_args = (
   "script_files" => [],
   "test_requires" => {
     "Cwd" => 0,
+    "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
     "IO::Handle" => 0,

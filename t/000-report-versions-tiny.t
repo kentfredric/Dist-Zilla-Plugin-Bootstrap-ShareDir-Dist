@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('Cwd','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::Bootstrap::lib','0.04000000') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.3') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Dist::Zilla::Role::Bootstrap','any version') };

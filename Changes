@@ -1,5 +1,12 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
+0.2.2 2013-09-08T08:19:00Z
+ [Bugfix]
+ - Tests require DZP:BS:Lib
+
+ [Dependencies::Added / test requires]
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000000
+
 0.2.1 2013-09-04T13:18:15Z
  [!Minor]
  - Make immutable.
