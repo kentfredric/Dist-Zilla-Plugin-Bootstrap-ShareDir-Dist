@@ -35,6 +35,7 @@ my %module_build_args = (
   "script_files" => [],
   "test_requires" => {
     "Cwd" => 0,
+    "Dist::Zilla::Plugin::Bootstrap::lib" => 0,
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
     "IO::Handle" => 0,
