@@ -3,7 +3,7 @@ NAME
     on your dist during bootstrap
 
 VERSION
-    version 0.2.2
+    version 0.2.3
 
 SYNOPSIS
     This module is the logical intersection of "ShareDir" and

@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
+0.2.3 2013-09-21T12:38:44Z
+
 0.2.2 2013-09-08T08:19:00Z
  [Bugfix]
  - Tests require DZP:BS:Lib

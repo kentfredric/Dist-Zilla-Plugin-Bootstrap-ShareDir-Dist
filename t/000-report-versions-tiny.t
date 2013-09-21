@@ -55,6 +55,7 @@ eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') }
 eval { $v .= pmver('Dist::Zilla::Role::Bootstrap','any version') };
 eval { $v .= pmver('File::Copy::Recursive','any version') };
 eval { $v .= pmver('File::ShareDir','any version') };
+eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('IO::Handle','any version') };
 eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('Module::Build','0.4007') };
