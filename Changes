@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.2.3 2013-09-24T22:24:38Z
+0.2.3 2013-09-24T22:24:44Z
  [Bugfix]
  - Call Test::DZil instead of calling dzil directly.
 

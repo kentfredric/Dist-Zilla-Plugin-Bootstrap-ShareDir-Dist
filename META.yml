@@ -113,7 +113,7 @@ x_Dist_Zilla:
           try_built: 1
           try_built_method: mtime
       name: Bootstrap::ShareDir::Dist
-      version: ~
+      version: 0.2.3
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::KENTNL/Git::NextVersion'

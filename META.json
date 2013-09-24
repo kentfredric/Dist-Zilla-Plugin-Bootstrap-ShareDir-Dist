@@ -172,7 +172,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : null
+            "version" : "0.2.3"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
