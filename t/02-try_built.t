@@ -7,19 +7,26 @@ use Path::Tiny;
 use Cwd qw( cwd );
 use File::Copy::Recursive qw( rcopy );
 
-my $source  = find_dev('./')->child('corpus')->child('fake_dist_02');
+my $dist    = 'fake_dist_02';
+my $source  = find_dev('./')->child('corpus')->child($dist);
 my $tempdir = Path::Tiny->tempdir;
 
 rcopy( "$source", "$tempdir" );
 
 BAIL_OUT("test setup failed to copy to tempdir") if not -e -f $tempdir->child("dist.ini");
 
-my $cwd = cwd();
-chdir "$tempdir";
+use Test::Fatal;
+use Test::DZil;
 
-is( system( "dzil", "build" ), 0, "dzil build ran ok" );
+is(
+  exception {
 
-chdir $cwd;
+    Builder->from_config( { dist_root => "$tempdir" } )->build;
+
+  },
+  undef,
+  "dzil build ran ok"
+);
 
 done_testing;
 
