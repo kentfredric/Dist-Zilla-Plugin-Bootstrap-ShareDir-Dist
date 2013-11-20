@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
 {{$NEXT}}
+
+0.2.4 2013-11-20T11:51:25Z
  [Bugfix]
  - Drop dependency on Perl 5.10
 
