@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a `share` directory on your
 
 # VERSION
 
-version 0.2.3
+version 0.2.4
 
 # SYNOPSIS
 
@@ -21,7 +21,7 @@ This module is the logical intersection of `ShareDir` and `Bootstrap::lib` plug-
 The only significant difference between this module and `ShareDir` is this module exists to make `share` visible to
 plugins for the distribution being built, while `ShareDir` exists to export the `share` directory visible after install time.
 
-Additionally, there are two primary attributes that are provided by [`Dist::Zilla::Role::Bootstrap`](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap), See ["ATTRIBUTES" in Dist::Zilla::Role::Bootstrap](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap#ATTRIBUTES)
+Additionally, there are two primary attributes that are provided by [`Dist::Zilla::Role::Bootstrap`](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap), See ["ATTRIBUTES" in Dist::Zilla::Role::Bootstrap](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap#ATTRIBUTES)
 
 For instance, this bootstraps `ROOT/Your-Dist-Name-$VERSION/share` if it exists and there's only one `$VERSION`,
 otherwise it falls back to simply bootstrapping `ROOT/share`
@@ -38,7 +38,7 @@ This is where all the real work is done.
 
 ## `bootstrap`
 
-Called by [`Dist::Zilla::Role::__Bootstrap__`](http://search.cpan.org/perldoc?Dist::Zilla::Role::Bootstrap)
+Called by [`Dist::Zilla::Role::__Bootstrap__`](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap)
 
 # ATTRIBUTES
 
