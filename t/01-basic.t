@@ -13,7 +13,8 @@ my $tempdir = Path::Tiny->tempdir;
 
 rcopy( "$source", "$tempdir" );
 
-BAIL_OUT("test setup failed to copy to tempdir") if not -e -f $tempdir->child("dist.ini");
+my $dist_ini = $tempdir->child('dist.ini');
+BAIL_OUT("test setup failed to copy to tempdir") if not -e $dist_ini and -f $dist_ini;
 
 use Test::Fatal;
 use Test::DZil;
