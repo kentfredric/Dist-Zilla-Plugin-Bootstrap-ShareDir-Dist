@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.2.5';
+  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.3.0';
 }
 
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
@@ -99,7 +99,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 
 =head1 VERSION
 
-version 0.2.5
+version 0.3.0
 
 =head1 SYNOPSIS
 
