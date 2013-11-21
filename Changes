@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.3.0 2013-11-21T07:18:15Z
+0.3.0 2013-11-21T07:19:14Z
  [00 Major]
  - Internals refactored in terms of T:F:SD:O:D
 
