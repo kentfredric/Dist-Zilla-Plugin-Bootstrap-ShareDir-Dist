@@ -101,7 +101,7 @@ x_BuiltWith:
     Test::CPAN::Meta: 0.23
     Test::DZil: 5.006
     Test::Fatal: 0.013
-    Test::File::ShareDir::Object::Dist: 0.3.4
+    Test::File::ShareDir::Object::Dist: 0.4.0
     Test::Kwalitee: 1.17
     Test::More: 1.001002
     Test::Pod: 1.48
