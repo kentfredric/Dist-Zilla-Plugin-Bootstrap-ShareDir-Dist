@@ -1,6 +1,14 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-0.2.5 2013-11-21T03:27:07Z
+0.2.5 2013-11-21T03:30:01Z
+ [00 Major]
+ - Internals refactored in terms of T:F:SD:O:D
+
+ [Dependencies::Added / runtime requires]
+ - Test::File::ShareDir::Object::Dist
+
+ [Dependencies::Removed / runtime requires]
+ - Test::File::ShareDir::TempDirObject
 
 0.2.4 2013-11-20T11:51:25Z
  [Bugfix]
