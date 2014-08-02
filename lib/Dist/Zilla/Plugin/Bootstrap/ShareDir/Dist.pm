@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
-$Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.3.1';
+$Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.003001';
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
 use Moose;
@@ -143,7 +143,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 
 =head1 VERSION
 
-version 0.3.1
+version 0.003001
 
 =head1 SYNOPSIS
 
