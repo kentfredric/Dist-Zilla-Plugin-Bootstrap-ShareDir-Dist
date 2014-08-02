@@ -1,5 +1,5 @@
 {
-   "abstract" : "Use a C<share> directory on your dist during bootstrap",
+   "abstract" : "Use a share directory on your dist during bootstrap",
    "author" : [
       "Kent Fredric <kentfredric@gmail.com>"
    ],
