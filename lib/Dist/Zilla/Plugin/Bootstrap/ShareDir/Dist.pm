@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose;
 use MooseX::AttributeShortcuts;
 

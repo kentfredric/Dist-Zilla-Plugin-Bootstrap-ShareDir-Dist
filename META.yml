@@ -37,9 +37,9 @@ requires:
   strict: '0'
   warnings: '0'
 resources:
-  bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
-  homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
-  repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
+  bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
+  homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
+  repository: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
 version: '1.000000'
 x_BuiltWith:
   modules:

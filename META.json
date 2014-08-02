@@ -119,13 +119,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues"
+         "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues"
       },
-      "homepage" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
+      "homepage" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git",
-         "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist"
+         "url" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git",
+         "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist"
       }
    },
    "version" : "1.000000",
