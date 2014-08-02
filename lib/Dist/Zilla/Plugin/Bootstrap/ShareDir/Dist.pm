@@ -145,7 +145,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 
 =head1 VERSION
 
-version 0.003001
+version 1.000000
 
 =head1 SYNOPSIS
 
