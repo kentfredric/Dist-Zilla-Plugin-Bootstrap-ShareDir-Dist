@@ -1,95 +1,26 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
+0.3.1 2014-08-02T07:01:00Z
+
 0.3.0 2013-11-21T07:19:14Z
  [00 Major]
  - Internals refactored in terms of T:F:SD:O:D
 
- [Dependencies::Added / runtime requires]
- - Test::File::ShareDir::Object::Dist
-
- [Dependencies::Removed / runtime requires]
- - Test::File::ShareDir::TempDirObject
+ [Dependencies::Stats]
+ - Dependencies changed since 0.2.4, see misc/*.deps* for details
+ - runtime: +1 -1
 
 0.2.4 2013-11-20T11:51:25Z
  [Bugfix]
  - Drop dependency on Perl 5.10
 
- [Dependencies::Added / develop requires]
- - Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
- - Dist::Zilla::Plugin::Authority 1.006
- - Dist::Zilla::Plugin::AutoPrereqs
- - Dist::Zilla::Plugin::CheckExtraTests
- - Dist::Zilla::Plugin::ConfirmRelease
- - Dist::Zilla::Plugin::EOLTests
- - Dist::Zilla::Plugin::Git::Check
- - Dist::Zilla::Plugin::Git::Commit
- - Dist::Zilla::Plugin::Git::CommitBuild
- - Dist::Zilla::Plugin::Git::GatherDir
- - Dist::Zilla::Plugin::Git::NextVersion
- - Dist::Zilla::Plugin::Git::Tag
- - Dist::Zilla::Plugin::GithubMeta
- - Dist::Zilla::Plugin::License
- - Dist::Zilla::Plugin::Manifest
- - Dist::Zilla::Plugin::ManifestSkip
- - Dist::Zilla::Plugin::MetaConfig
- - Dist::Zilla::Plugin::MetaData::BuiltWith
- - Dist::Zilla::Plugin::MetaJSON
- - Dist::Zilla::Plugin::MetaProvides::Package 1.14000001
- - Dist::Zilla::Plugin::MetaTests
- - Dist::Zilla::Plugin::MetaYAML
- - Dist::Zilla::Plugin::ModuleBuild
- - Dist::Zilla::Plugin::NextRelease
- - Dist::Zilla::Plugin::PkgVersion
- - Dist::Zilla::Plugin::PodCoverageTests
- - Dist::Zilla::Plugin::PodSyntaxTests
- - Dist::Zilla::Plugin::PodWeaver
- - Dist::Zilla::Plugin::Prereqs
- - Dist::Zilla::Plugin::Prereqs::MatchInstalled
- - Dist::Zilla::Plugin::PruneCruft
- - Dist::Zilla::Plugin::ReadmeAnyFromPod
- - Dist::Zilla::Plugin::ReadmeFromPod
- - Dist::Zilla::Plugin::ReportVersions::Tiny
- - Dist::Zilla::Plugin::Test::CPAN::Changes
- - Dist::Zilla::Plugin::Test::Compile::PerFile
- - Dist::Zilla::Plugin::Test::Kwalitee
- - Dist::Zilla::Plugin::Test::MinimumVersion
- - Dist::Zilla::Plugin::Test::Perl::Critic
- - Dist::Zilla::Plugin::TestRelease
- - Dist::Zilla::Plugin::Twitter
- - Dist::Zilla::Plugin::UploadToCPAN
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.002001
-
- [Dependencies::Added / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4007 → 0.4202
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4007 → 0.4202
-
- [Dependencies::Changed / develop requires]
- - Test::Kwalitee 1.08 → 1.12
-
- [Dependencies::Changed / runtime requires]
- - perl v5.10.0 → 5.006
-
- [Dependencies::Changed / test requires]
- - Test::More 0.98 → 1.001002
-
- [Dependencies::Removed / develop recommends]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
-
- [Dependencies::Removed / develop requires]
- - Dist::Zilla::PluginBundle::Author::KENTNL::Lite
-
- [Dependencies::Removed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.3
-
- [Dependencies::Removed / test requires]
- - File::Spec
- - IO::Handle
- - IPC::Open3
+ [Dependencies::Stats]
+ - Dependencies changed since 0.2.3, see misc/*.deps* for details
+ - build: ↑1
+ - configure: ↑1
+ - develop: +43 ↑1 -1 (recommends: -1, suggests: +1 -1)
+ - runtime: ↓1
+ - test: ↑1 -3
 
  [Documentation]
  - Point README to metacpan
@@ -105,17 +36,17 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
  [Bugfix]
  - Call Test::DZil instead of calling dzil directly.
 
- [Dependencies::Added / test requires]
- - File::Spec
- - Test::DZil
- - Test::Fatal
+ [Dependencies::Stats]
+ - Dependencies changed since 0.2.2, see misc/*.deps* for details
+ - test: +3
 
 0.2.2 2013-09-08T08:19:00Z
  [Bugfix]
  - Tests require DZP:BS:Lib
 
- [Dependencies::Added / test requires]
- - Dist::Zilla::Plugin::Bootstrap::lib 0.04000000
+ [Dependencies::Stats]
+ - Dependencies changed since 0.2.1, see misc/*.deps* for details
+ - test: +1
 
 0.2.1 2013-09-04T13:18:15Z
  [!Minor]
@@ -126,17 +57,10 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
  [!Major]
  - Reimplemented in terms of ::Role::Bootstrap
 
- [Dependencies::Added / runtime requires]
- - Dist::Zilla::Role::Bootstrap
-
- [Dependencies::Added / test requires]
- - Cwd
- - Path::Tiny
-
- [Dependencies::Removed / runtime requires]
- - Cwd
- - Dist::Zilla::Role::Plugin
- - Path::Tiny
+ [Dependencies::Stats]
+ - Dependencies changed since 0.1.0, see misc/*.deps* for details
+ - runtime: +1 -3
+ - test: +2
 
 0.1.0 2013-09-03T06:40:40Z
  - First version.

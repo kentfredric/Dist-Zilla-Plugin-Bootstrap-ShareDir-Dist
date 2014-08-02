@@ -2,17 +2,48 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
-BEGIN {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.3.0';
-}
-
+$Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.3.1';
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
 use Moose;
 use MooseX::AttributeShortcuts;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -36,6 +67,9 @@ around 'dump_config' => sub {
 };
 
 
+
+
+
 has dir => (
   is      => ro =>,
   lazy    => 1,
@@ -43,6 +77,11 @@ has dir => (
     return 'share';
   },
 );
+
+
+
+
+
 
 
 sub do_bootstrap_sharedir {
@@ -76,6 +115,11 @@ sub do_bootstrap_sharedir {
 }
 
 
+
+
+
+
+
 sub bootstrap {
   my $self = shift;
   return $self->do_bootstrap_sharedir;
@@ -99,7 +143,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on you
 
 =head1 VERSION
 
-version 0.3.0
+version 0.3.1
 
 =head1 SYNOPSIS
 
@@ -157,7 +201,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
