@@ -2,12 +2,12 @@
 .gitignore
 .perltidyrc
 .travis.yml
-Build.PL
 Changes
 LICENSE
 MANIFEST
 META.json
 META.yml
+Makefile.PL
 README
 corpus/fake_dist_01/dist.ini
 corpus/fake_dist_01/lib/E.pm
