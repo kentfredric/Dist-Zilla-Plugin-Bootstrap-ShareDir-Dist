@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a `share` directory on your
 
 # VERSION
 
-version 0.3.0
+version 0.3.1
 
 # SYNOPSIS
 
@@ -38,20 +38,11 @@ This is where all the real work is done.
 
 ## `bootstrap`
 
-Called by [`Dist::Zilla::Role::__Bootstrap__`](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap)
+Called by [`Dist::Zilla::Role::**Bootstrap**`](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap)
 
 # ATTRIBUTES
 
 ## `dir`
-
-{
-    "namespace":"Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
-    "interface":"class",
-    "does":"Dist::Zilla::Role::Bootstrap",
-    "inherits":"Moose::Object"
-}
-
-
 
 # AUTHOR
 
@@ -59,7 +50,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
