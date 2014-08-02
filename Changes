@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
 {{$NEXT}}
+
+1.000000 2014-08-02T07:48:52Z
  [00 Major]
  - Changes that may affect hand-operated downstreams.
 
