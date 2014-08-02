@@ -1,18 +1,55 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
-BEGIN {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist::VERSION = '0.3.0';
-}
 
-# ABSTRACT: Use a C<share> directory on your dist during bootstrap
+our $VERSION = '1.000000';
 
-use Moose;
+# ABSTRACT: Use a share directory on your dist during bootstrap
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with around has );
 use MooseX::AttributeShortcuts;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,18 +59,21 @@ around 'dump_config' => sub {
   my ( $orig, $self, @args ) = @_;
   my $config    = $self->$orig(@args);
   my $localconf = {};
-  for my $var (qw( dir )) {
-    my $pred = 'has_' . $var;
+  for my $attribute (qw( dir )) {
+    my $pred = 'has_' . $attribute;
     if ( $self->can($pred) ) {
       next unless $self->$pred();
     }
-    if ( $self->can($var) ) {
-      $localconf->{$var} = $self->$var();
+    if ( $self->can($attribute) ) {
+      $localconf->{$attribute} = $self->$attribute();
     }
   }
   $config->{ q{} . __PACKAGE__ } = $localconf;
   return $config;
 };
+
+
+
 
 
 has dir => (
@@ -43,6 +83,11 @@ has dir => (
     return 'share';
   },
 );
+
+
+
+
+
 
 
 sub do_bootstrap_sharedir {
@@ -57,23 +102,28 @@ sub do_bootstrap_sharedir {
   my $sharedir = $root->child( $self->dir );
   $self->log( [ 'Bootstrapping %s for sharedir for %s', "$sharedir", $self->distname ] );
   require Test::File::ShareDir::Object::Dist;
-  my $object = Test::File::ShareDir::Object::Dist->new( dists =>  { $self->distname => $sharedir});
-  for my $dist ( $object->dist_names ) {
+  my $share_object = Test::File::ShareDir::Object::Dist->new( dists => { $self->distname => $sharedir } );
+  for my $dist ( $share_object->dist_names ) {
     $self->log_debug(
       [
         'Installing dist %s ( %s => %s )',
         "$dist",
-        $object->dist_share_source_dir($dist) . q{},
-        $object->dist_share_target_dir($dist) . q{},
-      ]
+        $share_object->dist_share_source_dir($dist) . q{},
+        $share_object->dist_share_target_dir($dist) . q{},
+      ],
     );
-    $object->install_dist($dist);
+    $share_object->install_dist($dist);
   }
   require lib;
-  lib->import( $object->inc->tempdir . q{} );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->inc->dist_tempdir . q{} ] );
+  lib->import( $share_object->inc->tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $share_object->inc->dist_tempdir . q{} ] );
   return;
 }
+
+
+
+
+
 
 
 sub bootstrap {
@@ -95,11 +145,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a C<share> directory on your dist during bootstrap
+Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your dist during bootstrap
 
 =head1 VERSION
 
-version 0.3.0
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -157,7 +207,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
