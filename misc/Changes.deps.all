@@ -8,11 +8,12 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - ExtUtils::MakeMaker
 
  [Added / develop requires]
+ - Dist::Zilla::Plugin::BumpVersionAfterRelease
  - Dist::Zilla::Plugin::Git::NextRelease
- - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
  - Dist::Zilla::Plugin::MakeMaker
  - Dist::Zilla::Plugin::MinimumPerl
  - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+ - Dist::Zilla::Plugin::RewriteVersion::Sanitized
  - Dist::Zilla::Plugin::RunExtraTests
  - Dist::Zilla::Plugin::Test::ReportPrereqs
 
@@ -44,6 +45,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Git::NextVersion
  - Dist::Zilla::Plugin::ModuleBuild
  - Dist::Zilla::Plugin::NextRelease
+ - Dist::Zilla::Plugin::PkgVersion
  - Dist::Zilla::Plugin::Prereqs::MatchInstalled
  - Dist::Zilla::Plugin::PruneCruft
  - Dist::Zilla::Plugin::ReportVersions::Tiny
