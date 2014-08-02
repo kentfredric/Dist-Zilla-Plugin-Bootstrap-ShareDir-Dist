@@ -110,7 +110,7 @@ sub do_bootstrap_sharedir {
         "$dist",
         $share_object->dist_share_source_dir($dist) . q{},
         $share_object->dist_share_target_dir($dist) . q{},
-      ]
+      ],
     );
     $share_object->install_dist($dist);
   }
