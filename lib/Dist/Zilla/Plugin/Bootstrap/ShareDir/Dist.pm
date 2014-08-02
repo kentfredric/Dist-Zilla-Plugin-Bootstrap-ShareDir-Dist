@@ -59,13 +59,13 @@ around 'dump_config' => sub {
   my ( $orig, $self, @args ) = @_;
   my $config    = $self->$orig(@args);
   my $localconf = {};
-  for my $var (qw( dir )) {
-    my $pred = 'has_' . $var;
+  for my $attribute (qw( dir )) {
+    my $pred = 'has_' . $attribute;
     if ( $self->can($pred) ) {
       next unless $self->$pred();
     }
-    if ( $self->can($var) ) {
-      $localconf->{$var} = $self->$var();
+    if ( $self->can($attribute) ) {
+      $localconf->{$attribute} = $self->$attribute();
     }
   }
   $config->{ q{} . __PACKAGE__ } = $localconf;
@@ -102,21 +102,21 @@ sub do_bootstrap_sharedir {
   my $sharedir = $root->child( $self->dir );
   $self->log( [ 'Bootstrapping %s for sharedir for %s', "$sharedir", $self->distname ] );
   require Test::File::ShareDir::Object::Dist;
-  my $object = Test::File::ShareDir::Object::Dist->new( dists => { $self->distname => $sharedir } );
-  for my $dist ( $object->dist_names ) {
+  my $share_object = Test::File::ShareDir::Object::Dist->new( dists => { $self->distname => $sharedir } );
+  for my $dist ( $share_object->dist_names ) {
     $self->log_debug(
       [
         'Installing dist %s ( %s => %s )',
         "$dist",
-        $object->dist_share_source_dir($dist) . q{},
-        $object->dist_share_target_dir($dist) . q{},
+        $share_object->dist_share_source_dir($dist) . q{},
+        $share_object->dist_share_target_dir($dist) . q{},
       ]
     );
-    $object->install_dist($dist);
+    $share_object->install_dist($dist);
   }
   require lib;
-  lib->import( $object->inc->tempdir . q{} );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->inc->dist_tempdir . q{} ] );
+  lib->import( $share_object->inc->tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $share_object->inc->dist_tempdir . q{} ] );
   return;
 }
 
