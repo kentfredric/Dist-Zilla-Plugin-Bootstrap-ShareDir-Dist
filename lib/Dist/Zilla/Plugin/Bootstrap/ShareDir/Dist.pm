@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: Use a C<share> directory on your dist during bootstrap
 
 use Moose;
@@ -96,7 +98,7 @@ sub do_bootstrap_sharedir {
   my $sharedir = $root->child( $self->dir );
   $self->log( [ 'Bootstrapping %s for sharedir for %s', "$sharedir", $self->distname ] );
   require Test::File::ShareDir::Object::Dist;
-  my $object = Test::File::ShareDir::Object::Dist->new( dists =>  { $self->distname => $sharedir});
+  my $object = Test::File::ShareDir::Object::Dist->new( dists => { $self->distname => $sharedir } );
   for my $dist ( $object->dist_names ) {
     $self->log_debug(
       [
