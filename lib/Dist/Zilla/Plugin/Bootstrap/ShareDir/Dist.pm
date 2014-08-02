@@ -11,7 +11,7 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( with around has );
 use MooseX::AttributeShortcuts;
 
 =begin MetaPOD::JSON v1.1.0
