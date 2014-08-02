@@ -152,7 +152,7 @@ x_Dist_Zilla:
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::ShareDir::Dist
-      version: '0.003001'
+      version: '1.000000'
     -
       class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
       config:

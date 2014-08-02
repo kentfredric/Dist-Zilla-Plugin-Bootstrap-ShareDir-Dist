@@ -252,7 +252,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "0.003001"
+            "version" : "1.000000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
