@@ -27,7 +27,7 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm
-    version: '0.003001'
+    version: '1.000000'
 requires:
   Dist::Zilla::Role::Bootstrap: '0'
   Moose: '0'
@@ -41,7 +41,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
-version: '0.003001'
+version: '1.000000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -152,7 +152,7 @@ x_Dist_Zilla:
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::ShareDir::Dist
-      version: 0.3.1
+      version: '0.003001'
     -
       class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
       config:
@@ -459,7 +459,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.003001-source
+          tag: 1.000000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -509,7 +509,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.003001'
+          tag: '1.000000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
