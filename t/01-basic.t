@@ -2,13 +2,11 @@ use strict;
 use warnings;
 
 use Test::More;
-use Path::FindDev qw( find_dev );
 use Path::Tiny;
-use Cwd qw( cwd );
 use File::Copy::Recursive qw( rcopy );
 
 my $dist    = 'fake_dist_01';
-my $source  = find_dev('./')->child('corpus')->child($dist);
+my $source  = Path::Tiny->cwd->child('corpus')->child($dist);
 my $tempdir = Path::Tiny->tempdir;
 
 rcopy( "$source", "$tempdir" );
