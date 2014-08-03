@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
 {{$NEXT}}
+
+1.000001 2014-08-03T02:04:39Z
  [00 Tests]
  - Drop use of Path::FindDev for tests.
 
