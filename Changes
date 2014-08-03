@@ -1,6 +1,12 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
 {{$NEXT}}
+ [00 Tests]
+ - Drop use of Path::FindDev for tests.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000000, see misc/*.deps* for details
+ - test: -2
 
 1.000000 2014-08-02T07:48:52Z
  [00 Major]
