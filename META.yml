@@ -148,7 +148,7 @@ x_Dist_Zilla:
           try_built: '1'
           try_built_method: mtime
       name: Bootstrap::ShareDir::Dist
-      version: '1.000001'
+      version: '1.000002'
     -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'

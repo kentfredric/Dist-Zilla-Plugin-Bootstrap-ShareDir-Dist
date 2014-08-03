@@ -249,7 +249,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Dist",
-            "version" : "1.000001"
+            "version" : "1.000002"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
