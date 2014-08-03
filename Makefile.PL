@@ -30,13 +30,11 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Cwd" => 0,
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
     "ExtUtils::MakeMaker" => 0,
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
     "File::Spec" => 0,
-    "Path::FindDev" => 0,
     "Path::Tiny" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
@@ -50,7 +48,6 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Cwd" => 0,
   "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
   "Dist::Zilla::Role::Bootstrap" => 0,
   "ExtUtils::MakeMaker" => 0,
@@ -59,7 +56,6 @@ my %FallbackPrereqs = (
   "File::Spec" => 0,
   "Moose" => 0,
   "MooseX::AttributeShortcuts" => 0,
-  "Path::FindDev" => 0,
   "Path::Tiny" => 0,
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
