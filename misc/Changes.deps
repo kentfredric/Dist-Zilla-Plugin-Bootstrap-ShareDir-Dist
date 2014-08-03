@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 1.000001
+ [Removed / test requires]
+ - Cwd
+ - Path::FindDev
 
 1.000000 2014-08-02T07:48:52Z
  [Added / configure requires]
