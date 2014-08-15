@@ -27,32 +27,6 @@ use MooseX::AttributeShortcuts;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with 'Dist::Zilla::Role::Bootstrap';
 
 around 'dump_config' => sub {
