@@ -27,32 +27,6 @@ use MooseX::AttributeShortcuts;
 
 =cut
 
-=head1 SYNOPSIS
-
-This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
-
-    [Bootstrap::lib]
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-
-    [ShareDir]
-    dir = share
-
-The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
-plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
-
-Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
-
-For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
-otherwise it falls back to simply bootstrapping C<ROOT/share>
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-    try_built = 1
-
-=cut
-
 with 'Dist::Zilla::Role::Bootstrap';
 
 around 'dump_config' => sub {
@@ -137,3 +111,28 @@ no MooseX::AttributeShortcuts;
 
 1;
 
+=head1 SYNOPSIS
+
+This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+
+    [ShareDir]
+    dir = share
+
+The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
+otherwise it falls back to simply bootstrapping C<ROOT/share>
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+    try_built = 1
+
+=cut
