@@ -1,6 +1,27 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-1.000003 2014-08-16T00:51:50Z
+1.001001 2014-08-30T13:50:57Z
+
+1.001000 2014-08-30T13:47:50Z
+ [00 Minor]
+ - Tests refactored.
+ - metadata
+ - internals
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000002, see misc/*.deps* for details
+ - develop: +1 ↑1 (suggests: ↑2)
+ - runtime: +1
+ - test: +1 -2
+
+ [Internals]
+ - dump_config implemented in config_dumper
+
+ [Metadata]
+ - set author = kentnl
+
+ [Tests]
+ - Refactored in terms of DZPUtAKENTNL::dztest
 
 1.000002 2014-08-15T21:15:41Z
  [00 Trivial]
