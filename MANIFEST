@@ -9,16 +9,6 @@ META.json
 META.yml
 Makefile.PL
 README
-corpus/fake_dist_03/E-0.01/META.json
-corpus/fake_dist_03/E-0.01/dist.ini
-corpus/fake_dist_03/E-0.01/lib/E.pm
-corpus/fake_dist_03/E-0.01/share/example.txt
-corpus/fake_dist_03/dist.ini
-corpus/fake_dist_03/lib/E.pm
-corpus/fake_dist_03/share/example.txt
-corpus/fake_dist_04/dist.ini
-corpus/fake_dist_04/lib/E.pm
-corpus/fake_dist_04/share/example.txt
 corpus/fake_dist_05/E-0.01/META.json
 corpus/fake_dist_05/E-0.01/dist.ini
 corpus/fake_dist_05/E-0.01/lib/E.pm
