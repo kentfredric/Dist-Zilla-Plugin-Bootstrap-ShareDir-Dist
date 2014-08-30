@@ -250,7 +250,7 @@
                   "try_built" : "1",
                   "try_built_method" : "mtime"
                },
-               "HASH(0x5465548)" : {}
+               "HASH(0x4c058c8)" : {}
             },
             "name" : "Bootstrap::ShareDir::Dist",
             "version" : "1.001000"

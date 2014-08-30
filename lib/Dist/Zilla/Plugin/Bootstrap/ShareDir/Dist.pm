@@ -30,7 +30,7 @@ use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => config_dumper( { attrs => ['dir'] } );
+around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
 
 
 
