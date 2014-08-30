@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Use a share directory on your dist during bootstrap",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
   "PREREQ_PM" => {
     "Dist::Zilla::Role::Bootstrap" => 0,
+    "Dist::Zilla::Util::ConfigDumper" => 0,
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,
     "Test::File::ShareDir::Object::Dist" => 0,
@@ -31,16 +32,15 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
-    "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
     "File::Spec" => 0,
     "Path::Tiny" => 0,
     "Test::DZil" => 0,
-    "Test::Fatal" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "1.000002",
+  "VERSION" => "1.001000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -50,15 +50,15 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
   "Dist::Zilla::Role::Bootstrap" => 0,
+  "Dist::Zilla::Util::ConfigDumper" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
-  "File::Copy::Recursive" => 0,
   "File::ShareDir" => 0,
   "File::Spec" => 0,
   "Moose" => 0,
   "MooseX::AttributeShortcuts" => 0,
   "Path::Tiny" => 0,
   "Test::DZil" => 0,
-  "Test::Fatal" => 0,
   "Test::File::ShareDir::Object::Dist" => 0,
   "Test::More" => "0.89",
   "lib" => 0,
