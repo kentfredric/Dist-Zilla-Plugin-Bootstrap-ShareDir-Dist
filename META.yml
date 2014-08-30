@@ -4,6 +4,7 @@ author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
   Dist::Zilla::Plugin::Bootstrap::lib: '0.04000000'
+  Dist::Zilla::Util::Test::KENTNL: '1.003001'
   ExtUtils::MakeMaker: '0'
   File::Copy::Recursive: '0'
   File::ShareDir: '0'
@@ -91,6 +92,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.020000'
     Dist::Zilla::Role::Bootstrap: '1.000003'
+    Dist::Zilla::Util::Test::KENTNL: '1.003001'
     ExtUtils::MakeMaker: '6.98'
     File::Copy::Recursive: '0.38'
     File::ShareDir: '1.102'

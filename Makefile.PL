@@ -31,6 +31,7 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
     "File::Copy::Recursive" => 0,
     "File::ShareDir" => 0,
@@ -50,6 +51,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Bootstrap::lib" => "0.04000000",
   "Dist::Zilla::Role::Bootstrap" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
   "File::Copy::Recursive" => 0,
   "File::ShareDir" => 0,
