@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 # VERSION
 
-version 1.001000
+version 1.001001
 
 # SYNOPSIS
 
