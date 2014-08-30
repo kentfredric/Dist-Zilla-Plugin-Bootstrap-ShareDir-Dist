@@ -4,7 +4,11 @@ use warnings;
 use Test::More;
 use Test::DZil qw( simple_ini );
 use Dist::Zilla::Util::Test::KENTNL 1.003001 qw(dztest);
-use Test::Fatal;
+require Dist::Zilla::Plugin::Bootstrap::lib;
+require Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
+require Moose;
+require File::ShareDir;
+require Path::Tiny;
 
 my $t = dztest();
 $t->add_file(
