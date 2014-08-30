@@ -582,14 +582,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/::Role::BundleDeps'
       version: '5.020'
     -
-      class: Dist::Zilla::Plugin::FileFinder::ByName
-      name: corpusfiles
-      version: '5.020'
-    -
-      class: Dist::Zilla::Plugin::AutoPrereqs
-      name: corpus
-      version: '5.020'
-    -
       class: Dist::Zilla::Plugin::Prereqs
       config:
         Dist::Zilla::Plugin::Prereqs:
