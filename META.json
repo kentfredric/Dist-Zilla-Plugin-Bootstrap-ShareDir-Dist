@@ -114,7 +114,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
          "file" : "lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm",
-         "version" : "1.000003"
+         "version" : "1.001000"
       }
    },
    "release_status" : "stable",
@@ -129,7 +129,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist"
       }
    },
-   "version" : "1.000003",
+   "version" : "1.001000",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -669,7 +669,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "1.000003-source",
+                  "tag" : "1.001000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -740,7 +740,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "1.000003",
+                  "tag" : "1.001000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
