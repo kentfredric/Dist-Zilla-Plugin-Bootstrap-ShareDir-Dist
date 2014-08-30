@@ -13,6 +13,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with around has );
 use MooseX::AttributeShortcuts;
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 
 
@@ -29,22 +30,7 @@ use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => sub {
-  my ( $orig, $self, @args ) = @_;
-  my $config    = $self->$orig(@args);
-  my $localconf = {};
-  for my $attribute (qw( dir )) {
-    my $pred = 'has_' . $attribute;
-    if ( $self->can($pred) ) {
-      next unless $self->$pred();
-    }
-    if ( $self->can($attribute) ) {
-      $localconf->{$attribute} = $self->$attribute();
-    }
-  }
-  $config->{ q{} . __PACKAGE__ } = $localconf;
-  return $config;
-};
+around 'dump_config' => config_dumper( { attrs => ['dir'] } );
 
 
 

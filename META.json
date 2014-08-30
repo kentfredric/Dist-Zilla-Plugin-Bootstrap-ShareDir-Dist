@@ -83,6 +83,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::Role::Bootstrap" : "0",
+            "Dist::Zilla::Util::ConfigDumper" : "0",
             "Moose" : "0",
             "MooseX::AttributeShortcuts" : "0",
             "Test::File::ShareDir::Object::Dist" : "0",
@@ -181,6 +182,7 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.020000",
          "Dist::Zilla::Role::Bootstrap" : "1.000003",
+         "Dist::Zilla::Util::ConfigDumper" : "0.003002",
          "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
          "ExtUtils::MakeMaker" : "6.98",
          "File::ShareDir" : "1.102",
