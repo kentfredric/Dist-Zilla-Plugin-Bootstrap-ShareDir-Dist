@@ -244,15 +244,13 @@
          {
             "class" : "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist",
             "config" : {
-               "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : {
-                  "dir" : "share"
-               },
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist",
                   "fallback" : "1",
                   "try_built" : "1",
                   "try_built_method" : "mtime"
-               }
+               },
+               "HASH(0x5465548)" : {}
             },
             "name" : "Bootstrap::ShareDir::Dist",
             "version" : "1.001000"
