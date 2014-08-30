@@ -46,7 +46,7 @@ Called by [`Dist::Zilla::Role::**Bootstrap**`](https://metacpan.org/pod/Dist::Zi
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
