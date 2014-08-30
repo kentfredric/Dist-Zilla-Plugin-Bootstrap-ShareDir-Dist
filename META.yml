@@ -1,7 +1,7 @@
 ---
 abstract: 'Use a share directory on your dist during bootstrap'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Dist::Zilla::Plugin::Bootstrap::lib: '0.04000000'
   Dist::Zilla::Util::Test::KENTNL: '1.003001'
