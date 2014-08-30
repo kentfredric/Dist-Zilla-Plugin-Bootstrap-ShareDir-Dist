@@ -13,6 +13,7 @@ our $VERSION = '1.001000';
 
 use Moose qw( with around has );
 use MooseX::AttributeShortcuts;
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -29,22 +30,7 @@ use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => sub {
-  my ( $orig, $self, @args ) = @_;
-  my $config    = $self->$orig(@args);
-  my $localconf = {};
-  for my $attribute (qw( dir )) {
-    my $pred = 'has_' . $attribute;
-    if ( $self->can($pred) ) {
-      next unless $self->$pred();
-    }
-    if ( $self->can($attribute) ) {
-      $localconf->{$attribute} = $self->$attribute();
-    }
-  }
-  $config->{ q{} . __PACKAGE__ } = $localconf;
-  return $config;
-};
+around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
 
 =attr C<dir>
 
