@@ -2,46 +2,30 @@ use strict;
 use warnings;
 
 use Test::More;
-use Test::DZil qw(simple_ini);
-use Dist::Zilla::Util::Test::KENTNL 1.003001 qw(dztest);
-use Dist::Zilla::Plugin::Bootstrap::lib 0.04000000;
-require Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
-require File::ShareDir;
-require Path::Tiny;
+use Path::Tiny;
+use File::Copy::Recursive qw( rcopy );
 
-my $t   = dztest();
-my $ini = simple_ini(
-  { name => 'E' },
-  [
-    'Bootstrap::lib',
-    {
-      ':version' => '0.04000000',
-      try_built  => 1,
-      fallback   => 0,
-    }
-  ],    #
-  [ 'Bootstrap::ShareDir::Dist', { try_built => 1, fallback => 0 } ],    #
-  ['=E'],
+my $dist    = 'fake_dist_04';
+my $source  = Path::Tiny->cwd->child('corpus')->child($dist);
+my $tempdir = Path::Tiny->tempdir;
+
+rcopy( "$source", "$tempdir" );
+
+my $dist_ini = $tempdir->child('dist.ini');
+BAIL_OUT("test setup failed to copy to tempdir") if not -e $dist_ini and -f $dist_ini;
+
+use Test::Fatal;
+use Test::DZil;
+
+isnt(
+  exception {
+
+    Builder->from_config( { dist_root => "$tempdir" } )->build;
+
+  },
+  undef,
+  "dzil build ran ok"
 );
-my $epm = <<'EOF';
-use strict;
-use warnings;
-package E;
-
-use File::ShareDir qw( dist_file );
-use Path::Tiny qw( path );
-
-sub register_component {}
-
-our $content = path( dist_file( 'E', 'example.txt' ) )->slurp;
-
-1;
-EOF
-$t->add_file( 'dist.ini' => $ini );
-
-$t->add_file( 'share/example.txt', q[ ] );
-$t->add_file( 'lib/E.pm',          $epm );
-
-isnt( $t->safe_build, undef, 'Build should fail' );
 
 done_testing;
+

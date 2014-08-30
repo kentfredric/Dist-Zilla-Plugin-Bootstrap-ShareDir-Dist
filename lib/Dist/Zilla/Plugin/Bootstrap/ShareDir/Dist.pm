@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.000003';
 
 # ABSTRACT: Use a share directory on your dist during bootstrap
 
@@ -13,7 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with around has );
 use MooseX::AttributeShortcuts;
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 
 
@@ -30,7 +29,22 @@ use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
+around 'dump_config' => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config    = $self->$orig(@args);
+  my $localconf = {};
+  for my $attribute (qw( dir )) {
+    my $pred = 'has_' . $attribute;
+    if ( $self->can($pred) ) {
+      next unless $self->$pred();
+    }
+    if ( $self->can($attribute) ) {
+      $localconf->{$attribute} = $self->$attribute();
+    }
+  }
+  $config->{ q{} . __PACKAGE__ } = $localconf;
+  return $config;
+};
 
 
 
@@ -109,7 +123,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 =head1 VERSION
 
-version 1.001001
+version 1.000003
 
 =head1 SYNOPSIS
 
@@ -163,7 +177,7 @@ Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstr
 
 =head1 AUTHOR
 
-Kent Fredric <kentnl@cpan.org>
+Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
