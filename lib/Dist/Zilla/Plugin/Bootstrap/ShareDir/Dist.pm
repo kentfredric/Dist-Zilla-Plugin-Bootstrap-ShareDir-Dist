@@ -5,14 +5,13 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Use a share directory on your dist during bootstrap
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with around has );
-use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 
@@ -37,12 +36,16 @@ around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
 
 
 has dir => (
-  is      => ro =>,
-  lazy    => 1,
-  builder => sub {
-    return 'share';
-  },
+  is         => ro =>,
+  lazy_build => 1,
 );
+
+sub _build_dir {
+  return 'share';
+}
+
+__PACKAGE__->meta->make_immutable;
+no Moose;
 
 
 
@@ -91,10 +94,6 @@ sub bootstrap {
   return $self->do_bootstrap_sharedir;
 }
 
-__PACKAGE__->meta->make_immutable;
-no Moose;
-no MooseX::AttributeShortcuts;
-
 1;
 
 __END__
@@ -109,11 +108,22 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 =head1 VERSION
 
-version 1.001000
+version 1.001001
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
-This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
+This module allows one to load a C<Dist> styled C<ShareDir> using a C<Bootstrap>
+mechanism so a distribution can use files in its own source tree when building with itself.
+
+This is very much like the C<Bootstrap::lib> plugin in that it injects libraries into
+C<@INC> based on your existing source tree, or a previous build you ran.
+
+And it is syntactically like the C<ShareDir> plugin.
+
+B<Note> that this is really only useful for self consuming I<plugins> and will have no effect
+on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::File::ShareDir> ).
+
+=head1 USAGE
 
     [Bootstrap::lib]
 
@@ -167,7 +177,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
