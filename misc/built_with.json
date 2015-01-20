@@ -7,7 +7,7 @@
       "Dist::Zilla::Plugin::Author::KENTNL::TravisCI" : "0.001000",
       "Dist::Zilla::Plugin::Authority" : "1.009",
       "Dist::Zilla::Plugin::AutoPrereqs" : "5.031",
-      "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : "1.001001",
+      "Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist" : "1.001002",
       "Dist::Zilla::Plugin::Bootstrap::lib" : "1.001000",
       "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.008",
       "Dist::Zilla::Plugin::ConfirmRelease" : "5.031",
