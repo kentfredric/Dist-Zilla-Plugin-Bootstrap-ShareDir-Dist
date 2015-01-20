@@ -6,9 +6,20 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 version 1.001001
 
-# SYNOPSIS
+# DESCRIPTION
 
-This module is the logical intersection of `ShareDir` and `Bootstrap::lib` plug-ins.
+This module allows one to load a `Dist` styled `ShareDir` using a `Bootstrap`
+mechanism so a distribution can use files in its own source tree when building with itself.
+
+This is very much like the `Bootstrap::lib` plugin in that it injects libraries into
+`@INC` based on your existing source tree, or a previous build you ran.
+
+And it is syntactically like the `ShareDir` plugin.
+
+**Note** that this is really only useful for self consuming _plugins_ and will have no effect
+on the `test` or `run` phases of your dist. ( For that, you'll need `Test::File::ShareDir` ).
+
+# USAGE
 
     [Bootstrap::lib]
 

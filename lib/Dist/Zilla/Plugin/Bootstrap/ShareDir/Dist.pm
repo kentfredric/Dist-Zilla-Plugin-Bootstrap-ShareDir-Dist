@@ -96,9 +96,20 @@ sub bootstrap {
 
 1;
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
-This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
+This module allows one to load a C<Dist> styled C<ShareDir> using a C<Bootstrap>
+mechanism so a distribution can use files in its own source tree when building with itself.
+
+This is very much like the C<Bootstrap::lib> plugin in that it injects libraries into
+C<@INC> based on your existing source tree, or a previous build you ran.
+
+And it is syntactically like the C<ShareDir> plugin.
+
+B<Note> that this is really only useful for self consuming I<plugins> and will have no effect
+on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::File::ShareDir> ).
+
+=head1 USAGE
 
     [Bootstrap::lib]
 
