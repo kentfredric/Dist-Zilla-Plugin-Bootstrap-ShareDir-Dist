@@ -12,7 +12,6 @@ our $VERSION = '1.001001';
 # AUTHORITY
 
 use Moose qw( with around has );
-use MooseX::AttributeShortcuts;
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 =begin MetaPOD::JSON v1.1.0
@@ -37,12 +36,16 @@ around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
 =cut
 
 has dir => (
-  is      => ro =>,
-  lazy    => 1,
-  builder => sub {
-    return 'share';
-  },
+  is         => ro =>,
+  lazy_build => 1,
 );
+
+sub _build_dir {
+  return 'share';
+}
+
+__PACKAGE__->meta->make_immutable;
+no Moose;
 
 =method C<do_bootstrap_sharedir>
 
@@ -90,10 +93,6 @@ sub bootstrap {
   my $self = shift;
   return $self->do_bootstrap_sharedir;
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
-no MooseX::AttributeShortcuts;
 
 1;
 
