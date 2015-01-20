@@ -123,6 +123,28 @@ And it is syntactically like the C<ShareDir> plugin.
 B<Note> that this is really only useful for self consuming I<plugins> and will have no effect
 on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::File::ShareDir> ).
 
+=head1 USAGE
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+
+    [ShareDir]
+    dir = share
+
+The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
+otherwise it falls back to simply bootstrapping C<ROOT/share>
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+    try_built = 1
+
 =head1 METHODS
 
 =head2 C<do_bootstrap_sharedir>
@@ -148,28 +170,6 @@ Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstr
 
 
 =end MetaPOD::JSON
-
-=head1 USAGE
-
-    [Bootstrap::lib]
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-
-    [ShareDir]
-    dir = share
-
-The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
-plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
-
-Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
-
-For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
-otherwise it falls back to simply bootstrapping C<ROOT/share>
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-    try_built = 1
 
 =head1 AUTHOR
 
