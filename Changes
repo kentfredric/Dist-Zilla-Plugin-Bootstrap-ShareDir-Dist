@@ -1,12 +1,15 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-1.001001 2015-01-20T22:20:45Z a79bd15
+1.001001 2015-01-20T22:24:41Z ca70b89
  [Dependencies::Stats]
  - Dependencies changed since 1.001000, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
  - develop: +10 ↑2 -2 (recommends: +1, suggests: ↑2)
- - runtime: (recommends: +1)
+ - runtime: -1 (recommends: +1)
  - test: +1 (recommends: +1 ↑1 ↓1)
+
+ [Internals]
+ - Removed MooseX::AttributeShortcuts to remove indirect autobox dep.
 
 1.001000 2014-08-30T13:47:50Z
  [00 Minor]

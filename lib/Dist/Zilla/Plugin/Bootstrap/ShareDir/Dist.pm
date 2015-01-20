@@ -110,7 +110,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 version 1.001001
 
-=head1 SYNOPSIS
+=head1 DESCRIPTION
 
 This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
 
