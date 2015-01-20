@@ -112,27 +112,16 @@ version 1.001001
 
 =head1 DESCRIPTION
 
-This module is the logical intersection of C<ShareDir> and C<Bootstrap::lib> plug-ins.
+This module allows one to load a C<Dist> styled C<ShareDir> using a C<Bootstrap>
+mechanism so a distribution can use files in its own source tree when building with itself.
 
-    [Bootstrap::lib]
+This is very much like the C<Bootstrap::lib> plugin in that it injects libraries into
+C<@INC> based on your existing source tree, or a previous build you ran.
 
-    [Bootstrap::ShareDir::Dist]
-    dir = share
+And it is syntactically like the C<ShareDir> plugin.
 
-    [ShareDir]
-    dir = share
-
-The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
-plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
-
-Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
-
-For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
-otherwise it falls back to simply bootstrapping C<ROOT/share>
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-    try_built = 1
+B<Note> that this is really only useful for self consuming I<plugins> and will have no effect
+on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::File::ShareDir> ).
 
 =head1 METHODS
 
@@ -159,6 +148,28 @@ Called by L<<< C<< Dist::Zilla::Role::B<Bootstrap> >>|Dist::Zilla::Role::Bootstr
 
 
 =end MetaPOD::JSON
+
+=head1 USAGE
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+
+    [ShareDir]
+    dir = share
+
+The only significant difference between this module and C<ShareDir> is this module exists to make C<share> visible to
+plugins for the distribution being built, while C<ShareDir> exists to export the C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/share> if it exists and there's only one C<$VERSION>,
+otherwise it falls back to simply bootstrapping C<ROOT/share>
+
+    [Bootstrap::ShareDir::Dist]
+    dir = share
+    try_built = 1
 
 =head1 AUTHOR
 

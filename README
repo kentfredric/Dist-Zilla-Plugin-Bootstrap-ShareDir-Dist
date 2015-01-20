@@ -1,32 +1,18 @@
 Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist
 
-This module is the logical intersection of "ShareDir" and
-"Bootstrap::lib" plug-ins.
+This module allows one to load a "Dist" styled "ShareDir" using a
+"Bootstrap" mechanism so a distribution can use files in its own source
+tree when building with itself.
 
-    [Bootstrap::lib]
+This is very much like the "Bootstrap::lib" plugin in that it injects
+libraries into @INC based on your existing source tree, or a previous
+build you ran.
 
-    [Bootstrap::ShareDir::Dist]
-    dir = share
+And it is syntactically like the "ShareDir" plugin.
 
-    [ShareDir]
-    dir = share
-
-The only significant difference between this module and "ShareDir" is
-this module exists to make "share" visible to plugins for the
-distribution being built, while "ShareDir" exists to export the "share"
-directory visible after install time.
-
-Additionally, there are two primary attributes that are provided by
-"Dist::Zilla::Role::Bootstrap", See "ATTRIBUTES" in
-Dist::Zilla::Role::Bootstrap
-
-For instance, this bootstraps "ROOT/Your-Dist-Name-$VERSION/share" if it
-exists and there's only one $VERSION, otherwise it falls back to simply
-bootstrapping "ROOT/share"
-
-    [Bootstrap::ShareDir::Dist]
-    dir = share
-    try_built = 1
+Note that this is really only useful for self consuming *plugins* and
+will have no effect on the "test" or "run" phases of your dist. ( For
+that, you'll need "Test::File::ShareDir" ).
 
 INSTALLATION
 
