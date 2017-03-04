@@ -101,7 +101,6 @@
          },
          "requires" : {
             "Dist::Zilla::Role::Bootstrap" : "0",
-            "Dist::Zilla::Util::ConfigDumper" : "0",
             "Moose" : "0",
             "Test::File::ShareDir::Object::Dist" : "0",
             "lib" : "0",
