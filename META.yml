@@ -25,7 +25,7 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Dist.pm
-    version: '1.001002'
+    version: '1.001003'
 recommends:
   Moose: '2.000'
 requires:
@@ -41,4 +41,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist.git
-version: '1.001002'
+version: '1.001003'
