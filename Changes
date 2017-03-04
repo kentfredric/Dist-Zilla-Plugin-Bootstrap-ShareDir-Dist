@@ -1,6 +1,14 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
-1.001002 2015-01-20T22:42:11Z e06a67c
+1.001002 2017-03-04T06:45:44Z 929e090
+ [Bugfix]
+ - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
+ - Closes https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist/issues/3
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001001, see misc/*.deps* for details
+ - develop: +5 ↑4 -2 (suggests: ↑2)
+ - test: ↓1
 
 1.001001 2015-01-20T22:33:27Z d97fa56
  [Dependencies::Stats]
@@ -142,4 +150,3 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Dist
 
 0.1.0 2013-09-03T06:40:40Z
  - First version.
-
