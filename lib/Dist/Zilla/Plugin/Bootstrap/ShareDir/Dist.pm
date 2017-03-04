@@ -12,7 +12,6 @@ our $VERSION = '1.001002';
 # AUTHORITY
 
 use Moose qw( with around has );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -29,7 +28,20 @@ use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  if ( $self->meta->find_attribute_by_name('dir')->has_value($self) ) {
+    $localconf->{dir} = $self->dir;
+  }
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 =attr C<dir>
 
