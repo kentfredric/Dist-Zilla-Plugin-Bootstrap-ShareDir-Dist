@@ -5,14 +5,13 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.001002';
 
 # ABSTRACT: Use a share directory on your dist during bootstrap
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with around has );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 
 
@@ -29,7 +28,20 @@ use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::Bootstrap';
 
-around 'dump_config' => config_dumper( __PACKAGE__, { attrs => ['dir'] } );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  if ( $self->meta->find_attribute_by_name('dir')->has_value($self) ) {
+    $localconf->{dir} = $self->dir;
+  }
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 
 
@@ -108,7 +120,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Dist - Use a share directory on your d
 
 =head1 VERSION
 
-version 1.001001
+version 1.001002
 
 =head1 DESCRIPTION
 
@@ -177,7 +189,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

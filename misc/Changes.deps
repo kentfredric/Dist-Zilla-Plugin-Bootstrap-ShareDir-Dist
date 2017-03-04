@@ -1,6 +1,13 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-1.001001
+1.001002
+ [Changed / test requires]
+ - Test::More 0.89 → 0
+
+ [Removed / runtime requires]
+ - Dist::Zilla::Util::ConfigDumper
+
+1.001001 2015-01-20T22:33:27Z
  [Added / configure requires]
  - perl 5.008
 
@@ -100,4 +107,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - Cwd
  - Dist::Zilla::Role::Plugin
  - Path::Tiny
-
